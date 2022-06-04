@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@200;300&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Sans:ital,wght@0,400;1,100&family=Pacifico&family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/17141a7dbb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container w">
+      <form class="d-flex searchForm" id="search-form">
+        <input
+          class="form-control me-2 searchInput"
+          type="search"
+          placeholder="Type a city name"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success searchButton" type="submit">
+          Search
+        </button>
+        <button id="current" type="button">
+          Current
+        </button>
+      </form>
+      <h1>Mashhad</h1>
+      <!--<div class="row top">
+        <div class="col todai">
+          <div class="row">
+            <div class="col-6 emojiToday">
+              ☀
+            </div>
+            <div class="col-6 details">
+              17℃
+              <br />
+              <span id="todays-day">
+              </span>
+              <br />
+              <span id="hour">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col todai">
+          <div class="row">
+            <div class="col-6 emojiToday">
+              ☀
+            </div>
+            <div class="col-6 details">
+              19℃
+              <br />
+              <span id="todays-day">
+              </span>
+              <br />
+              <span id="hour">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col todai">
+          <div class="row">
+            <div class="col-6 emojiToday">
+              ☀
+            </div>
+            <div class="col-6 details">
+              19℃
+              <br />
+              <span id="todays-day">
+              </span>
+              <br />
+              <span id="hour">
+              </span>
+            </div>
+          </div>
+        </div>
+        -->
+        <div class="col-12 now">
+          <div class="row">
+            <div class="col-6 emojiToday now">
+              ☀
+            </div>
+          
+            <div class="col-6 details now">
+              <pan class="degree">21</pan>
+              <span class="degreeSymbol">
+                  <span class="celcius">℃</span>
+                  <!-- |<span class="farenheit">℉</span> -->
+                </span>
+              <br />
+              <span class="main" id="todays-day">
+              </span>
+              <br />
+              <span id="hour">
+              </span>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="col todai">
+          <div class="row">
+            <div class="col-6 emojiToday">
+              ☀
+            </div>
+            <div class="col-6 details">
+              21℃
+              <br />
+              <span id="todays-day">
+              </span>
+              <br />
+              <span id="hour">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col todai">
+          <div class="row">
+            <div class="col-6 emojiToday">
+              ☀
+            </div>
+            <div class="col-6 details">
+              22℃
+              <br />
+              <span id="todays-day">
+              </span>
+              <br />
+              <span id="hour">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col todai">
+          <div class="row">
+            <div class="col-6 emojiToday">
+              ☀
+            </div>
+            <div class="col-6 details">
+              22℃
+              <br />
+              <span id="todays-day">
+              </span>
+              <br />
+              <span id="hour">
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+    -->
+      <!------------------------------------------------------------------------------------------------------------->
+      <div class="row bottom">
+        <div class="col">
+          <div class="card forecast">
+            <div class="card-body forecast">
+              <p class="card-text fore">
+                <div class="day">
+                  <span class="foreDay"></span>
+                  , <span class="monthName"></span> 
+                    <span class="foreDate"></span>
+                </div>
+                <div class="emoji"> 🌤 </div>
+                <div class="highest">
+                  ↑25℃
+                </div>
+                <div class="lowest">
+                  ↓12℃
+                </div>
+                <div class="sunrise">Sunrise: 5:06 AM</div>
+                <div class="sunset">Sunset: 7:15 PM</div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card forecast">
+            <div class="card-body forecast">
+              <p class="card-text fore">
+                <div class="day">
+                  <span class="foreDay"></span>
+                  , <span class="monthName"></span> 
+                    <span class="foreDate"></span></div>
+                <div class="emoji"> ☁ </div>
+                <div class="highest">
+                  ↑24℃
+                </div>
+                <div class="lowest">
+                  ↓11℃
+                </div>
+                <div class="sunrise">Sunrise: 5:04 AM</div>
+                <div class="sunset">Sunset: 7:17 PM</div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card forecast">
+            <div class="card-body forecast">
+              <p class="card-text fore">
+                <div class="day">
+                  <span class="foreDay"></span>
+                  , <span class="monthName"></span> 
+                    <span class="foreDate"></span></div>
+                <div class="emoji"> 🌧 </div>
+                <div class="highest">
+                  ↑23℃
+                </div>
+                <div class="lowest">
+                  ↓10℃
+                </div>
+                <div class="sunrise">Sunrise: 5:02 AM</div>
+                <div class="sunset">Sunset: 7:18 PM</div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card forecast">
+            <div class="card-body forecast">
+              <p class="card-text fore">
+                <div class="day">
+                  <span class="foreDay"></span>
+                  , <span class="monthName"></span> 
+                    <span class="foreDate"></span></div>
+                <div class="emoji"> 🌤 </div>
+                <div class="highest">
+                  ↑23℃
+                </div>
+                <div class="lowest">
+                  ↓11℃
+                </div>
+                <div class="sunrise">Sunrise: 5:01 AM</div>
+                <div class="sunset">Sunset: 7:20 PM</div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card forecast">
+            <div class="card-body forecast">
+              <p class="card-text fore">
+                <div class="day">
+                  <span class="foreDay"></span>
+                  , <span class="monthName"></span> 
+                    <span class="foreDate"></span></div>
+                <div class="emoji"> 🌤 </div>
+                <div class="highest">
+                  ↑24℃
+                </div>
+                <div class="lowest">
+                  ↓10℃
+                </div>
+                <div class="sunrise">Sunrise: 4:59 AM</div>
+                <div class="sunset">Sunset: 7:21 PM</div>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+h1 {
+  text-align: center;
+  font-weight: 800px;
+  margin: 20px;
+  font-family: "Noto Sans", sans-serif;
+  color: blueviolet;
+  -webkit-text-stroke: 1px rgb(73, 27, 116);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+hr {
+  color: gray;
+  border: 2px solid gray;
+}
+#current {
+  border-radius: 3px;
+  display: inline;
+  position: relative;
+  left: 110px;
+  box-shadow: 0px 9px 9px gray;
+  background: rgb(8, 190, 166);
+  color: white;
+  border: 1px solid rgb(8, 190, 166);
+  transition: all 100ms ease-in-out;
+}
+#current:hover {
+  color: rgb(8, 190, 166);
+  background: white;
+  border: 1px solid rgb(8, 190, 166);
+}
+.searchInput {
+  width: 200px;
+  text-align: center;
+  display: block;
+  margin: 0;
+  position: relative;
+  left: 100px;
+  box-shadow: 0px 9px 9px gray;
+}
+.searchForm {
+  display: block;
+  margin: 20px auto 10px;
+  width: 500px;
+}
+.searchButton {
+  display: inline;
+  position: relative;
+  left: 100px;
+  box-shadow: 0px 9px 9px gray;
+  background: blueviolet;
+  color: white;
+  border: 1px solid blueviolet;
+}
+.searchButton:hover {
+  color: blueviolet;
+  background: white;
+  border: 1px solid blueviolet;
+}
+.emojiToday {
+  border-right: 1px solid gray;
+  text-align: right;
+  font-size: 44px;
+  padding: 10px 5px;
+  color: rgb(63, 63, 63);
+}
+
+.details {
+  font-size: 18px;
+  padding: 0 0 0 5px;
+}
+.details.now {
+  font-size: 22px;
+  font-weight: 600;
+}
+.emojiToday.now {
+  font-size: 64px;
+  padding: 8px 5px;
+}
+
+.row.top,
+.row.bottom {
+  margin: 30px 0;
+}
+.todai {
+  margin: 20px 0;
+}
+.forecast {
+  text-align: center;
+  padding: 0;
+  box-shadow: 0px 9px 9px gray;
+}
+.card.forecast {
+  background: transparent;
+}
+.emoji {
+  font-size: 54px;
+  color: rgb(63, 63, 63);
+}
+p.fore {
+  margin-top: 10px;
+}
+div.highest {
+  color: red;
+  font-size: 20px;
+}
+.lowest {
+  color: blue;
+  font-size: 20px;
+}
+.day {
+  font-size: 24px;
+}
+.sunrise {
+  color: rgb(58, 58, 58);
+  background: rgba(255, 255, 60, 0.5);
+  margin: 10px 15px 0;
+  border-radius: 5px;
+}
+.sunset {
+  color: rgb(58, 58, 58);
+  margin: 0 15px;
+  border-radius: 5px;
+  background: rgba(255, 180, 60, 0.5);
+}
+.container.w {
+  max-width: 950px;
+  background: linear-gradient(0deg, #fdfcfb 0%, #edc2fe 100%);
+  padding: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0px 9px 9px gray;
+}
+.main#todays-day {
+  font-size: 18px;
+}
+#todays-day {
+  font-size: 14px;
+}
+.degreeSymbol {
+  font-size: 16px;
+}
+.celcius:hover {
+  cursor: pointer;
+  color: blueviolet;
+}
+.farenheit:hover {
+  cursor: pointer;
+  color: blueviolet;
+}
