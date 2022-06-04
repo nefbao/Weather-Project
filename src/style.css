@@ -148,3 +148,6 @@ div.highest {
   cursor: pointer;
   color: blueviolet;
 }
+.link {
+  text-align: center;
+}
