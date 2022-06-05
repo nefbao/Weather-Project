@@ -16,7 +16,14 @@ hr {
 }
 ul {
   list-style-type: none;
+  margin-bottom: 0;
+  margin-top: 8px;
+  padding-left: 20px;
 }
+ul.description {
+  margin-top: 26px;
+}
+
 .m_title:first-letter {
   text-transform: uppercase;
 }
@@ -115,7 +122,7 @@ div.highest {
   border-radius: 5px;
   background: rgba(255, 180, 60, 0.5);
 }
-.container.w {
+.wrap {
   max-width: 950px;
   background: linear-gradient(0deg, #fdfcfb 0%, #edc2fe 100%);
   padding: 20px 0;
@@ -142,4 +149,5 @@ div.highest {
 }
 .link {
   text-align: center;
+  margin: 20px auto;
 }

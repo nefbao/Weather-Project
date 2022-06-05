@@ -28,6 +28,7 @@
   </head>
   <body>
     <div class="container w">
+      <div class="wrap">
       <form class="d-flex searchForm" id="search-form">
         <input
           class="form-control me-2 searchInput"
@@ -43,27 +44,31 @@
       <div class="row today">
         <div class="col-6 now">
           <div class="row">
-            <div class="col-9 emojiToday now">
+            <div class="col-8 emojiToday now">
               <img src="image/01d@2x.png" alt="" id="icon" class="float-right" />
             </div>  
-            <div class="col-3 details now">
-              <pan class="degree">21</pan>
+            <div class="col-4 details now">
+              <ul>
+              <li><pan class="degree">21</pan>
               <span class="degreeSymbol">
                   <span class="celcius">℃</span>
                    |<span class="farenheit">℉</span>
               </span>
-              <br />
+              </li>
+              <li>
               <span class="main" id="todays-day">
               </span>
-              <br />
+              </li>
+              <li>
               <span id="hour">
               </span>
+              </li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="col-6">
-          <br />
-          <ul>
+          <ul class="description">
             <li class="weatherDescription m_title">
               Clear sky
             </li>
@@ -71,7 +76,7 @@
                 Wind Speed: <span class="windSpeed">3.09</span> km/h
             </li>
             <li>
-                Humidity: <span class="humidity">29</span> %
+                Humidity: <span class="humidity">29</span>%
             </li> 
           </ul>
         </div>
@@ -185,14 +190,12 @@
           </div>
         </div>
       </div>
-      <div class="row link">
-          <div class="col-5"></div>
-            <div class="col-2">
-                <div class="link">
-                <a class="githubLink" href="https://github.com/nefbao/Weather-Project" target="_blank" rel="noreferrer">GitHub</a>
-                </div>
-            </div>
-            <div class="col-5"></div>
+      
+      </div>
+      <div class="link">
+        <small>
+          <a class="githubLink" href="https://github.com/nefbao/Weather-Project" target="_blank" rel="noreferrer">open-source code</a>
+        </small>
       </div>
     </div>  
     <script src="src/app.js"></script>

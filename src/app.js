@@ -100,6 +100,7 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  //unit conversion settings
   const celciusStyle = document.querySelector(".celcius");
   const farenheitStyle = document.querySelector(".farenheit");
   farenheitStyle.style.color = "blueviolet";
