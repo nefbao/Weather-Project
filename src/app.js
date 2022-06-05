@@ -59,24 +59,24 @@ now = new Date();
 
 //set hour --------------------------------------------------------------------------------------------------------------
 let thisHour = document.querySelectorAll("#hour");
-let i = 3;
+//let i = 3;
 thisHour.forEach(function (t) {
   let hour = now.getHours();
   let minutes = now.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  if (hour - i < 24) {
-    hour = hour - i;
-  } else {
-    hour = hour - i - 24;
-  }
+  //  if (hour - i < 24) {
+  //    hour = hour - i;
+  //  } else {
+  //    hour = hour - i - 24;
+  //  }
   if (hour < 10) {
     t.innerHTML = `0${hour}:${minutes}`;
   } else {
     t.innerHTML = `${hour}:${minutes}`;
   }
-  i = i - 1;
+  //  i = i - 1;
 });
 
 //display the city name ---------------------------------------------------------------------------------------------------
