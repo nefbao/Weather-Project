@@ -81,6 +81,7 @@ thisHour.forEach(function (t) {
 
 //display the city name ---------------------------------------------------------------------------------------------------
 function showTemp(response) {
+  celsiusTemperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector(".degree");
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   console.log(response);
@@ -99,6 +100,12 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  const celciusStyle = document.querySelector(".celcius");
+  const farenheitStyle = document.querySelector(".farenheit");
+  farenheitStyle.style.color = "blueviolet";
+  farenheitStyle.style.cursor = "pointer";
+  celciusStyle.style.color = "black";
+  celciusStyle.style.cursor = "default";
 }
 function inputCity(event) {
   event.preventDefault();
@@ -109,5 +116,31 @@ function inputCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&units=metric`;
   axios.get(`${apiUrl}&appId=${apiKey}`).then(showTemp);
 }
+function showFarenheit(event) {
+  currentTemp.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+  const celciusStyle = document.querySelector(".celcius");
+  const farenheitStyle = document.querySelector(".farenheit");
+  celciusStyle.style.color = "blueviolet";
+  celciusStyle.style.cursor = "pointer";
+  farenheitStyle.style.color = "black";
+  farenheitStyle.style.cursor = "default";
+}
+
+function showCelcius(event) {
+  currentTemp.innerHTML = celsiusTemperature;
+  const celciusStyle = document.querySelector(".celcius");
+  const farenheitStyle = document.querySelector(".farenheit");
+  farenheitStyle.style.color = "blueviolet";
+  farenheitStyle.style.cursor = "pointer";
+  celciusStyle.style.color = "black";
+  celciusStyle.style.cursor = "default";
+}
+
+let currentTemp = document.querySelector(".degree");
 let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", inputCity);
+let celsiusTemperature = 21;
+let farenheit = document.querySelector(".farenheit");
+farenheit.addEventListener("click", showFarenheit);
+let celcius = document.querySelector(".celcius");
+celcius.addEventListener("click", showCelcius);

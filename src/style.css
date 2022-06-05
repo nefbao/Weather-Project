@@ -63,6 +63,7 @@ ul {
 .details.now {
   font-size: 22px;
   font-weight: 600;
+  line-height: 160%;
 }
 .emojiToday.now {
   font-size: 64px;
@@ -131,12 +132,13 @@ div.highest {
   font-size: 16px;
 }
 .celcius:hover {
-  cursor: pointer;
+  cursor: default;
+}
+.farenheit {
   color: blueviolet;
 }
 .farenheit:hover {
   cursor: pointer;
-  color: blueviolet;
 }
 .link {
   text-align: center;
