@@ -82,7 +82,6 @@ thisHour.forEach(function (t) {
 // ---------------------------------------------------------------------------------------------------
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   forecastVariable = response.data.daily;
   let forcastEmojis = document.querySelectorAll(".emoji");
   forcastEmojis.forEach(function (day, index) {
