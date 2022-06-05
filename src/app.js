@@ -79,12 +79,32 @@ thisHour.forEach(function (t) {
   //  i = i - 1;
 });
 
-//display the city name ---------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forcastEmojis = document.querySelectorAll(".emoji");
+  forcastEmojis.forEach(function (day, index) {
+    day.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${
+        response.data.daily[index + 1].weather[0].icon
+      }@2x.png`
+    );
+  });
+}
+
+function getForcast(coordinates) {
+  let apiKey = "29a7fe4cccbf011560f42be2276ac125";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemp(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector(".degree");
   currentTemp.innerHTML = Math.round(response.data.main.temp);
-  console.log(response);
+  getForcast(response.data.coord);
   //display weather description
   let weatherDescription = document.querySelector(".weatherDescription");
   weatherDescription.innerHTML = response.data.weather[0].description;
@@ -145,3 +165,7 @@ let farenheit = document.querySelector(".farenheit");
 farenheit.addEventListener("click", showFarenheit);
 let celcius = document.querySelector(".celcius");
 celcius.addEventListener("click", showCelcius);
+
+let apiKeyInitial = "29a7fe4cccbf011560f42be2276ac125";
+let apiUrlInitial = `https://api.openweathermap.org/data/2.5/weather?q=Mashhad&units=metric`;
+axios.get(`${apiUrlInitial}&appId=${apiKeyInitial}`).then(showTemp);

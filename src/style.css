@@ -93,12 +93,9 @@ ul.description {
   box-shadow: 0px 9px 9px gray;
 }
 .card.forecast {
-  background: transparent;
+  background: white;
 }
-.emoji {
-  font-size: 54px;
-  color: rgb(63, 63, 63);
-}
+
 p.fore {
   margin-top: 10px;
 }
