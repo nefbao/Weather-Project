@@ -99,11 +99,11 @@ ul.description {
 p.fore {
   margin-top: 10px;
 }
-div.highest {
+.highArrow {
   color: red;
   font-size: 20px;
 }
-.lowest {
+.lowArrow {
   color: blue;
   font-size: 20px;
 }

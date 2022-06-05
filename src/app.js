@@ -83,6 +83,7 @@ thisHour.forEach(function (t) {
 
 function displayForecast(response) {
   console.log(response.data.daily);
+  forecastVariable = response.data.daily;
   let forcastEmojis = document.querySelectorAll(".emoji");
   forcastEmojis.forEach(function (day, index) {
     day.setAttribute(
@@ -91,6 +92,18 @@ function displayForecast(response) {
         response.data.daily[index + 1].weather[0].icon
       }@2x.png`
     );
+  });
+
+  //set highest degree
+  let highestDegree = document.querySelectorAll(".highest");
+  highestDegree.forEach(function (day, index) {
+    day.innerHTML = Math.round(response.data.daily[index + 1].temp.max);
+  });
+
+  //set lowest degree
+  let lowestDegree = document.querySelectorAll(".lowest");
+  lowestDegree.forEach(function (day, index) {
+    day.innerHTML = Math.round(response.data.daily[index + 1].temp.min);
   });
 }
 
@@ -145,6 +158,26 @@ function showFarenheit(event) {
   celciusStyle.style.cursor = "pointer";
   farenheitStyle.style.color = "black";
   farenheitStyle.style.cursor = "default";
+
+  //set highest degree in farenheit
+  let highestDegree = document.querySelectorAll(".highest");
+  highestDegree.forEach(function (day, index) {
+    day.innerHTML = Math.round(
+      (forecastVariable[index + 1].temp.max * 9) / 5 + 32
+    );
+  });
+
+  //set lowest degree in farenheit
+  let lowestDegree = document.querySelectorAll(".lowest");
+  lowestDegree.forEach(function (day, index) {
+    day.innerHTML = Math.round(
+      (forecastVariable[index + 1].temp.min * 9) / 5 + 32
+    );
+  });
+  let forecsatDegree = document.querySelectorAll(".forecastDegree");
+  forecsatDegree.forEach(function (tag) {
+    tag.innerHTML = "℉";
+  });
 }
 
 function showCelcius(event) {
@@ -155,12 +188,27 @@ function showCelcius(event) {
   farenheitStyle.style.cursor = "pointer";
   celciusStyle.style.color = "black";
   celciusStyle.style.cursor = "default";
+
+  //set highest degree in celcius
+  let highestDegree = document.querySelectorAll(".highest");
+  highestDegree.forEach(function (day, index) {
+    day.innerHTML = Math.round(forecastVariable[index + 1].temp.max);
+  });
+
+  //set lowest degree in celcius
+  let lowestDegree = document.querySelectorAll(".lowest");
+  lowestDegree.forEach(function (day, index) {
+    day.innerHTML = Math.round(forecastVariable[index + 1].temp.min);
+  });
+  let forecsatDegree = document.querySelectorAll(".forecastDegree");
+  forecsatDegree.forEach(function (tag) {
+    tag.innerHTML = "℃";
+  });
 }
 
 let currentTemp = document.querySelector(".degree");
 let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", inputCity);
-let celsiusTemperature = 21;
 let farenheit = document.querySelector(".farenheit");
 farenheit.addEventListener("click", showFarenheit);
 let celcius = document.querySelector(".celcius");
@@ -169,3 +217,4 @@ celcius.addEventListener("click", showCelcius);
 let apiKeyInitial = "29a7fe4cccbf011560f42be2276ac125";
 let apiUrlInitial = `https://api.openweathermap.org/data/2.5/weather?q=Mashhad&units=metric`;
 axios.get(`${apiUrlInitial}&appId=${apiKeyInitial}`).then(showTemp);
+let forecastVariable = null;
